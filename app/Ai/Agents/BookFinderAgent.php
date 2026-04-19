@@ -2,6 +2,7 @@
 
 namespace App\Ai\Agents;
 
+use App\Ai\Tools\SearchBooks;
 use App\Models\AgentConversationMessage;
 use App\Models\User;
 use Laravel\Ai\Contracts\Agent;
@@ -97,6 +98,6 @@ class BookFinderAgent implements Agent, Conversational, HasTools
      */
     public function tools(): iterable
     {
-        return [];
+        return [new SearchBooks()];
     }
 }
